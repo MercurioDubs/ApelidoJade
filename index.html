@@ -1,131 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Vumbora ver teu Apelido</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revelar Apelido</title>
   <style>
-    :root{
-      --bg:#0b0b0b;
-      --accent-start:#1f0b2e;
-      --accent-end:#5b1fbf;
-      --text:#f8f8f8;
-      --muted:#cfcbe0;
+    body {
+      background-color: #0b0b0b;
+      color: #f8f8f8;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
     }
-    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
-    body{
-      background:var(--bg);
-      color:var(--text);
-      display:flex;align-items:center;justify-content:center;
+    button {
+      cursor: pointer;
+      font-weight: 600;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      transition: background 0.3s;
     }
-    .stage{
-      width:min(920px,94%);
-      padding:28px;
-      border-radius:14px;
-      text-align:center;
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      box-shadow:0 8px 40px rgba(0,0,0,0.6);
-    }
-    h1{margin:0 0 18px;font-size:20px;letter-spacing:0.6px;color:var(--muted)}
-    .btn{
-      display:inline-block;padding:14px 22px;border-radius:10px;background:#fff;color:#111;font-weight:700;text-decoration:none;cursor:pointer;user-select:none;border:none;font-size:16px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.3);
-    }
-    .reveal-area{
-      margin-top:28px;min-height:260px;position:relative;overflow:hidden;border-radius:12px;padding:26px;
-    }
-    .overlay{
-      position:absolute;inset:0;background:transparent;display:flex;align-items:center;justify-content:center;z-index:5;transition:background 1s ease;
-    }
-    .nickname{
-      font-size:44px;font-weight:800;opacity:0;transform:translateY(-10px) scale(0.95);transition:opacity 0.8s ease, transform 0.8s cubic-bezier(.2,.9,.25,1);
-      letter-spacing:1px;
-    }
-    .textbox{
-      margin-top:12px;text-align:left;font-size:16px;line-height:1.6;color:var(--text);white-space:pre-wrap;opacity:0;transition:opacity 0.5s ease;
-      max-height:420px;overflow:auto;padding-right:8px;
-    }
-    .bg-purple{background:linear-gradient(135deg,var(--accent-start),var(--accent-end));}
-
-    @media (max-width:520px){
-      .nickname{font-size:28px}
-      .btn{width:100%}
-    }
+    .bg-red-600 { background-color: #dc2626; color: #fff; }
+    .bg-red-600:hover { background-color: #b91c1c; }
+    #nicknameReveal { display: none; margin-top: 2rem; max-width: 800px; }
+    #nicknameReveal h2 { font-size: 1.5rem; color: #f87171; }
+    #reasonText { color: #e5e7eb; margin-top: 0.5rem; white-space: pre-wrap; line-height: 1.5; }
   </style>
 </head>
 <body>
-  <div class="stage" id="stage">
-    <h1>Surpresinha Proce</h1>
-    <button class="btn" id="revealBtn">Vumbora ver teu Apelido</button>
-    <div class="reveal-area" id="revealArea" aria-live="polite">
-      <div class="overlay" id="overlay">
-        <div>
-          <div class="nickname" id="nickname">APELIDO</div>
-        </div>
-      </div>
-      <div class="textbox" id="textbox"></div>
+
+  <button onclick="revealNickname()" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+    Revelar Apelido!
+  </button>
+
+  <div id="nicknameReveal">
+    <h2 id="seu-apelido-é-raffaello">Seu apelido é: Raffaello!</h2>
+    <p id="reasonText">
+Primeiramente, vai se foder, Mercúrio.
+Sabe porque escolhi esse nome? Não tenho um significado próprio pra ele, mas pensei nele quando nós tava fazendo a lore do SMP do Tesla, e em alguma parte aleatória daquela lore que não vou dizer qual... eu talvez tenha escrevido algo que veio mais de mim pra ti, doq apenas lore. Enfim, nosso texto vai ficar um pouco parecido, porq percebi que ce escreve q nem eu nessas horas, mas yaya, eu também queria te agradecer por tudo ao qual ce já fez por mim, e mesmo que pra ti algumas delas foi ou ainda pareça algo pequeno, pra mim esses pequenos detalhes mudam tudo todos os dias, e sim, eu sou bom com textos, e se eu pudesse te faria vários ao ponto q ce me daria uma fodendo panelada por isto. E ainda assim eu tbm gosto de mostrar que me importo através de ações, tempo de qualidade e presentes, e eu queria que vc soubesse que ce não é só especial pra mim, mas também você é como um girassol pra muá, pois girassóis geralmente simbolizam a luz, e isso é tudo que puedo hablar. Enfim, escolhi este nome, pois eu queria que fosse algo especial e inocente, uma forma única de poder falar teu nome que ninguém mais tenha, assim como o de Izuna pro Zaraki, algo que uma criança pensaria pra amiga, e algo que o Rafael de 8 anos pensaria pela primeira vez pra alguém que fosse a única melhor amiga dele. Até hoje eu nunca havia dado um apelido pra ninguém que não fosse algo racista ou bem bosta proposital como Zé Gotinha da Petrobras, Posto Ipiranga, Cu de nós todos, Celular com bateria viciada (precisa plugar nele toda hora), mas mesmo que isso pareça da boca pra fora apenas pra eu de alguma maneira tentar te fazer sentir especial e sorrir, quero que saiba que é real e que hoje você ocupa mais uma vez o pódio de primeira vez em algo referente a nós (e pelo visto eu tbm sem querer fiz uma frase estranha neste djabo), e assim como um girassol transmite felicidade em algumas lendas, na nossa lenda vc me faz feliz sempre, tira risadas minhas até mesmo quando esto mal sem nem saber, oce é gentil pacarai com eu também, mesmo que diariamente me espanque e tente me matar, ce cuida de mim me obrigando a dormir cedo com uma arma apontada em minha cabeça. Quando to sem vontade de falar com as pessoas, ce pergunta se quero fazer outra coisa, e o fato de ce ta sempre cmg tbm faz parte do verbo cuidar, mesmo que não haja algo no sentido literal, só de vc estar presente e o tempo de qualidade já faz parte disso pra eu. Não sei se tudo isso seria um significado importantíssimo pra ti, mas pra mim, o significado de tudo isso que falei e o significado do apelido que te dei é você. Fodase se parecer estranho, mas assim como o significado de um apelido é único, assim como ações raras são únicas, assim como o tempo de qualidade é bem raro e único, vc é única pra cacete, assim como cada coisinha que mencionei, principalmente pra mim. E quer saber? É isso que torna tudo especial, é isso que torna esse apelido especial pra mim, e é isso que te torna tão especial pra mim, e eu quero que ce vá se foder, idiota.
+    </p>
+    <div style="margin-top:1rem;">
+      <audio id="bgMusic" loop preload="auto">
+        <source src="https://archive.org/download/Filmato/13.AC%20DC%20-%20Highway%20to%20Hell.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+      </audio>
+      <button onclick="toggleMusic()" class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm mt-2">Tocar Música</button>
     </div>
   </div>
 
   <script>
-    const NICKNAME = 'Yaya';
-
-    const FULL_TEXT = `Sabe por que escolhi esse nome? Não tenho um significado próprio pra ele, mas pensei nele quando nós estávamos fazendo a lore do SMP do Tesla, e em alguma parte aleatória daquela lore que não vou dizer qual... Eu talvez tenha escrevido algo que veio mais de mim pra ti do que apenas lore. Enfim, nosso texto vai ficar um pouco parecido porque percebi que cê escreve que nem eu nessas horas, mas yaya, eu também queria te agradecer por tudo ao qual cê já fez por mim, e mesmo que pra ti algumas delas foram ou ainda pareçam algo pequeno, pra mim esses pequenos detalhes mudam tudo todos os dias. E sim, eu sou bom com textos, e se eu pudesse te faria vários ao ponto que cê me daria uma fodendo panelada por isto.
-
-E ainda assim eu também gosto de mostrar que me importo através de ações, tempo de qualidade e presentes, e eu queria que você soubesse que cê não é só especial pra mim, mas também você é como um girassol pra muá, pois girassóis geralmente simbolizam a luz, e isso é tudo que puedo hablar. Enfim, escolhi este nome pois eu queria que fosse algo especial e inocente, uma forma única de poder falar teu nome que ninguém mais tenha, assim como o de Izuna pro Zaraki, algo que uma criança pensaria pra amiga e algo que o Rafael de 8 anos pensaria pela primeira vez pra alguém que fosse a única melhor amiga dele.
-
-Até hoje eu nunca havia dado um apelido pra ninguém que não fosse algo racista ou bem bosta proposital, como Zé Gotinha da Petrobras, Posto Ipiranga, Cu de nós todos, Celular com bateria viciada (precisa plugar nele toda hora). Mas mesmo que pareça da boca pra fora o que falei lá em cima só pra eu de alguma maneira tentar te fazer sentir especial e sorrir, quero que saiba que é real, e que hoje você ocupa mais uma vez o pódio de primeira vez em algo referente a nós (e pelo visto eu também sem querer fiz uma frase estranha neste djabo).
-
-E assim como um girassol transmite felicidade em algumas lendas, na nossa lenda você me faz feliz sempre, tira risadas minhas até mesmo quando estou mal sem nem saber, você é gentil pacarai comigo também. Mesmo que diariamente me espanque e tente me matar, cê cuida de mim me obrigando a dormir cedo com uma arma apontada em minha cabeça; quando tô sem vontade de falar com as pessoas, cê pergunta se quero fazer outra coisa, e o fato de cê tá sempre comigo também faz parte do verbo cuidar, mesmo que não haja algo no sentido literal. Só de você estar presente e o tempo de qualidade já faz parte disso pra mim.
-
-Não sei se tudo isso seria um significado importantíssimo pra ti, mas pra mim o significado de tudo isso que falei e o significado do apelido que te dei é você. Foda-se se parecer estranho, mas assim como o significado de um apelido é único, assim como ações raras são únicas, assim como o tempo de qualidade é bem raro e único, você é única pra cacete assim como cada coisinha que mencionei, principalmente pra mim. E quer saber? É isso que torna tudo especial, é isso que torna esse apelido especial pra mim, e é isso que te torna tão especial pra mim, e eu quero que cê vá se foder, idiota.`;
-
-    const btn = document.getElementById('revealBtn');
-    const overlay = document.getElementById('overlay');
-    const nicknameEl = document.getElementById('nickname');
-    const textbox = document.getElementById('textbox');
-
-    nicknameEl.textContent = NICKNAME;
-
-    function animateBackgroundToPurple(){
-      document.body.style.transition = 'background 1.2s ease';
-      document.body.style.background = '#000';
-      setTimeout(()=>{ document.body.classList.add('bg-purple'); },800);
+    function revealNickname() {
+      document.getElementById('nicknameReveal').style.display = 'block';
+      window.scrollTo({ top: document.getElementById('nicknameReveal').offsetTop, behavior: 'smooth' });
     }
 
-    function revealNickname(){
-      overlay.style.background = 'rgba(0,0,0,0.85)';
-      nicknameEl.style.opacity = '1';
-      nicknameEl.style.transform = 'translateY(0) scale(1)';
+    function toggleMusic() {
+      const music = document.getElementById('bgMusic');
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
     }
-
-    function typeText(text, el, speed=18){
-      el.textContent = '';
-      el.style.opacity = 1;
-      let i=0;
-      const timer = setInterval(()=>{
-        el.textContent += text[i] || '';
-        i++;
-        el.scrollTop = el.scrollHeight;
-        if(i>=text.length) clearInterval(timer);
-      }, speed);
-    }
-
-    btn.addEventListener('click', ()=>{
-      btn.disabled = true;
-      overlay.style.transition = 'background 1s ease';
-      overlay.style.background = 'rgba(0,0,0,1)';
-      animateBackgroundToPurple();
-      setTimeout(revealNickname,700);
-      setTimeout(()=>{ typeText(FULL_TEXT,textbox,16); },1300);
-    });
-
-    nicknameEl.addEventListener('click', ()=>{
-      textbox.textContent='';
-      nicknameEl.style.opacity=0;
-      setTimeout(()=>{nicknameEl.style.opacity=1; nicknameEl.style.transform='translateY(0) scale(1)';},200);
-      setTimeout(()=>{typeText(FULL_TEXT,textbox,16);},500);
-    });
   </script>
+
 </body>
 </html>
