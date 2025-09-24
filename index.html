@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -44,52 +45,44 @@
       margin-top:12px;text-align:left;font-size:16px;line-height:1.6;color:var(--text);white-space:pre-wrap;opacity:0;transition:opacity 0.5s ease;
       max-height:420px;overflow:auto;padding-right:8px;
     }
-    /* final purple background */
-    .bg-purple{background:linear-gradient(135deg,var(--accent-start),var(--accent-end));}/* small devices */
-@media (max-width:520px){
-  .nickname{font-size:28px}
-  .btn{width:100%}
-}
+    .bg-purple{background:linear-gradient(135deg,var(--accent-start),var(--accent-end));}
 
+    @media (max-width:520px){
+      .nickname{font-size:28px}
+      .btn{width:100%}
+    }
   </style>
 </head>
 <body>
   <div class="stage" id="stage">
     <h1>Surpresinha Proce</h1>
-    <button class="btn" id="revealBtn">Vumbora ver teu Apelido</button><div class="reveal-area" id="revealArea" aria-live="polite">
-  <div class="overlay" id="overlay">
-    <div>
-      <div class="nickname" id="nickname">APELIDO</div>
+    <button class="btn" id="revealBtn">Vumbora ver teu Apelido</button>
+    <div class="reveal-area" id="revealArea" aria-live="polite">
+      <div class="overlay" id="overlay">
+        <div>
+          <div class="nickname" id="nickname">APELIDO</div>
+        </div>
+      </div>
+      <div class="textbox" id="textbox"></div>
     </div>
   </div>
 
-  <div class="textbox" id="textbox"></div>
-</div>
-
-  </div>  <script>
-    // ============= EDIT HERE =============
-    // coloque aqui o apelido que quer revelar
+  <script>
     const NICKNAME = 'Yaya';
 
-    // coloque aqui o texto completo (use \n para novas linhas)
-    const FULL_TEXT = Sabe por que escolhi esse nome? Não tenho um significado próprio pra ele, mas pensei nele quando nós estávamos fazendo a lore do SMP do Tesla, e em alguma parte aleatória daquela lore que não vou dizer qual... Eu talvez tenha escrevido algo que veio mais de mim pra ti do que apenas lore. Enfim, nosso texto vai ficar um pouco parecido porque percebi que cê escreve que nem eu nessas horas, mas yaya, eu também queria te agradecer por tudo ao qual cê já fez por mim, e mesmo que pra ti algumas delas foram ou ainda pareçam algo pequeno, pra mim esses pequenos detalhes mudam tudo todos os dias. E sim, eu sou bom com textos, e se eu pudesse te faria vários ao ponto que cê me daria uma fodendo panelada por isto.\n\nE ainda assim eu também gosto de mostrar que me importo através de ações, tempo de qualidade e presentes, e eu queria que você soubesse que cê não é só especial pra mim, mas também você é como um girassol pra muá, pois girassóis geralmente simbolizam a luz, e isso é tudo que puedo hablar. Enfim, escolhi este nome pois eu queria que fosse algo especial e inocente, uma forma única de poder falar teu nome que ninguém mais tenha, assim como o de Izuna pro Zaraki, algo que uma criança pensaria pra amiga e algo que o Rafael de 8 anos pensaria pela primeira vez pra alguém que fosse a única melhor amiga dele.\n\nAté hoje eu nunca havia dado um apelido pra ninguém que não fosse algo racista ou bem bosta proposital, como Zé Gotinha da Petrobras, Posto Ipiranga, Cu de nós todos, Celular com bateria viciada (precisa plugar nele toda hora). Mas mesmo que pareça da boca pra fora o que falei lá em cima só pra eu de alguma maneira tentar te fazer sentir especial e sorrir, quero que saiba que é real, e que hoje você ocupa mais uma vez o pódio de primeira vez em algo referente a nós (e pelo visto eu também sem querer fiz uma frase estranha neste djabo).\n\nE assim como um girassol transmite felicidade em algumas lendas, na nossa lenda você me faz feliz sempre, tira risadas minhas até mesmo quando estou mal sem nem saber, você é gentil pacarai comigo também. Mesmo que diariamente me espanque e tente me matar, cê cuida de mim me obrigando a dormir cedo com uma arma apontada em minha cabeça; quando tô sem vontade de falar com as pessoas, cê pergunta se quero fazer outra coisa, e o fato de cê tá sempre comigo também faz parte do verbo cuidar, mesmo que não haja algo no sentido literal. Só de você estar presente e o tempo de qualidade já faz parte disso pra mim.\n\nNão sei se tudo isso seria um significado importantíssimo pra ti, mas pra mim o significado de tudo isso que falei e o significado do apelido que te dei é você. Foda-se se parecer estranho, mas assim como o significado de um apelido é único, assim como ações raras são únicas, assim como o tempo de qualidade é bem raro e único, você é única pra cacete assim como cada coisinha que mencionei, principalmente pra mim. E quer saber? É isso que torna tudo especial, é isso que torna esse apelido especial pra mim, e é isso que te torna tão especial pra mim, e eu quero que cê vá se foder, idiota.;
-    // ============= END EDIT =============
+    const FULL_TEXT = 'Sabe por que escolhi esse nome? Não tenho um significado próprio pra ele, mas pensei nele quando nós estávamos fazendo a lore do SMP do Tesla, e em alguma parte aleatória daquela lore que não vou dizer qual... Eu talvez tenha escrevido algo que veio mais de mim pra ti do que apenas lore. Enfim, nosso texto vai ficar um pouco parecido porque percebi que cê escreve que nem eu nessas horas, mas yaya, eu também queria te agradecer por tudo ao qual cê já fez por mim, e mesmo que pra ti algumas delas foram ou ainda pareçam algo pequeno, pra mim esses pequenos detalhes mudam tudo todos os dias. E sim, eu sou bom com textos, e se eu pudesse te faria vários ao ponto que cê me daria uma fodendo panelada por isto.\n\nE ainda assim eu também gosto de mostrar que me importo através de ações, tempo de qualidade e presentes, e eu queria que você soubesse que cê não é só especial pra mim, mas também você é como um girassol pra muá, pois girassóis geralmente simbolizam a luz, e isso é tudo que puedo hablar. Enfim, escolhi este nome pois eu queria que fosse algo especial e inocente, uma forma única de poder falar teu nome que ninguém mais tenha, assim como o de Izuna pro Zaraki, algo que uma criança pensaria pra amiga e algo que o Rafael de 8 anos pensaria pela primeira vez pra alguém que fosse a única melhor amiga dele.\n\nAté hoje eu nunca havia dado um apelido pra ninguém que não fosse algo racista ou bem bosta proposital, como Zé Gotinha da Petrobras, Posto Ipiranga, Cu de nós todos, Celular com bateria viciada (precisa plugar nele toda hora). Mas mesmo que pareça da boca pra fora o que falei lá em cima só pra eu de alguma maneira tentar te fazer sentir especial e sorrir, quero que saiba que é real, e que hoje você ocupa mais uma vez o pódio de primeira vez em algo referente a nós (e pelo visto eu também sem querer fiz uma frase estranha neste djabo).\n\nE assim como um girassol transmite felicidade em algumas lendas, na nossa lenda você me faz feliz sempre, tira risadas minhas até mesmo quando estou mal sem nem saber, você é gentil pacarai comigo também. Mesmo que diariamente me espanque e tente me matar, cê cuida de mim me obrigando a dormir cedo com uma arma apontada em minha cabeça; quando tô sem vontade de falar com as pessoas, cê pergunta se quero fazer outra coisa, e o fato de cê tá sempre comigo também faz parte do verbo cuidar, mesmo que não haja algo no sentido literal. Só de você estar presente e o tempo de qualidade já faz parte disso pra mim.\n\nNão sei se tudo isso seria um significado importantíssimo pra ti, mas pra mim o significado de tudo isso que falei e o significado do apelido que te dei é você. Foda-se se parecer estranho, mas assim como o significado de um apelido é único, assim como ações raras são únicas, assim como o tempo de qualidade é bem raro e único, você é única pra cacete assim como cada coisinha que mencionei, principalmente pra mim. E quer saber? É isso que torna tudo especial, é isso que torna esse apelido especial pra mim, e é isso que te torna tão especial pra mim, e eu quero que cê vá se foder, idiota.';
 
     const btn = document.getElementById('revealBtn');
     const overlay = document.getElementById('overlay');
     const nicknameEl = document.getElementById('nickname');
     const textbox = document.getElementById('textbox');
-    const stage = document.getElementById('stage');
 
     nicknameEl.textContent = NICKNAME;
 
     function animateBackgroundToPurple(){
-      // small smooth transition: step 1 darken, step 2 purple gradient
       document.body.style.transition = 'background 1.2s ease';
       document.body.style.background = '#000';
-      setTimeout(()=>{
-        document.body.classList.add('bg-purple');
-      },800);
+      setTimeout(()=>{ document.body.classList.add('bg-purple'); },800);
     }
 
     function revealNickname(){
@@ -103,7 +96,7 @@
       el.style.opacity = 1;
       let i=0;
       const timer = setInterval(()=>{
-        el.textContent += text[i] === '\n' ? '\n' : text[i];
+        el.textContent += text[i] || '';
         i++;
         el.scrollTop = el.scrollHeight;
         if(i>=text.length) clearInterval(timer);
@@ -112,28 +105,19 @@
 
     btn.addEventListener('click', ()=>{
       btn.disabled = true;
-      // fade overlay to black then nickname reveal
       overlay.style.transition = 'background 1s ease';
       overlay.style.background = 'rgba(0,0,0,1)';
       animateBackgroundToPurple();
-
-      setTimeout(()=>{
-        // show nickname big
-        revealNickname();
-      },700);
-
-      // start typing after nickname shows
-      setTimeout(()=>{
-        typeText(FULL_TEXT, textbox, 16);
-      },1300);
+      setTimeout(revealNickname,700);
+      setTimeout(()=>{ typeText(FULL_TEXT,textbox,16); },1300);
     });
 
-    // allow clicking nickname to replay
     nicknameEl.addEventListener('click', ()=>{
       textbox.textContent='';
       nicknameEl.style.opacity=0;
-      setTimeout(()=>{nicknameEl.style.opacity=1;nicknameEl.style.transform='translateY(0) scale(1)';},200);
+      setTimeout(()=>{nicknameEl.style.opacity=1; nicknameEl.style.transform='translateY(0) scale(1)';},200);
       setTimeout(()=>{typeText(FULL_TEXT,textbox,16);},500);
     });
-  </script></body>
+  </script>
+</body>
 </html>
