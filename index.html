@@ -1,89 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Revelar Apelido</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      overflow-x: hidden;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(to top, #4c1d95, #7c3aed);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      color: #f8f8f8;
-    }
-    .cloud {
-      position: absolute;
-      background: #ffffff33;
-      border-radius: 50%;
-      opacity: 0.6;
-      animation: moveClouds linear infinite;
-    }
-    @keyframes moveClouds {
-      0% { transform: translateX(-200px); }
-      100% { transform: translateX(100vw); }
-    }
-    button {
-      cursor: pointer;
-      font-weight: 600;
-      border: none;
-      border-radius: 0.5rem;
-      padding: 0.5rem 1rem;
-      transition: background 0.3s;
-    }
-    .btn-purple {
-      background-color: #7c3aed;
-      color: #fff;
-    }
-    .btn-purple:hover {
-      background-color: #a78bfa;
-    }
-    #nicknameReveal {
-      display: none;
-      margin-top: 2rem;
-      max-width: 800px;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-    }
-    #nicknameReveal h2 {
-      font-size: 2rem;
-      color: #d8b4fe;
-    }
-    #reasonText {
-      color: #e0d7f7;
-      margin-top: 0.5rem;
-      white-space: pre-wrap;
-      line-height: 1.6;
-      min-height: 200px;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revelar Apelido</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(to top, #4c1d95, #7c3aed);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #f8f8f8;
+  }
+
+  /* Nuvens animadas */
+  .cloud {
+    position: absolute;
+    background: #ffffff33;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: moveClouds linear infinite;
+  }
+  @keyframes moveClouds {
+    0% { transform: translateX(-200px); }
+    100% { transform: translateX(100vw); }
+  }
+
+  button {
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s;
+  }
+  .btn-purple {
+    background-color: #7c3aed;
+    color: #fff;
+  }
+  .btn-purple:hover {
+    background-color: #a78bfa;
+  }
+
+  #nicknameReveal {
+    display: none;
+    margin-top: 2rem;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  }
+  #nicknameReveal h2 {
+    font-size: 2rem;
+    color: #d8b4fe;
+  }
+  #reasonText {
+    color: #e0d7f7;
+    margin-top: 0.5rem;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    min-height: 200px;
+  }
+
+  #surpriseImage {
+    width: 250px; /* tamanho bom sem ocupar muito espaço */
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.8s ease;
+  }
+</style>
 </head>
 <body>
 
-  <button onclick="revealNickname()" class="btn-purple">
-    Revelar Apelido!
-  </button>
+  <!-- Imagem inicial -->
+  <img id="surpriseImage" src="https://cdn.discordapp.com/attachments/1303833685057081385/1420491726434603153/VRChat_2025-07-21_20-00-06.759_1280x720.jpg?ex=68d59783&is=68d44603&hm=5f06b5941826e574b3eed5230657821961388c1c21c49209bc6e5a50201efe0d&" alt="Imagem surpresa">
 
+  <!-- Botão para revelar apelido -->
+  <button onclick="revealNickname()" class="btn-purple">Revelar Apelido!</button>
+
+  <!-- Texto e apelido -->
   <div id="nicknameReveal">
     <h2>Seu apelido é: <span id="nickname">Yaya</span>!</h2>
     <p id="reasonText"></p>
     <div style="margin-top:1rem;">
       <audio id="bgMusic" loop preload="auto">
-        <source src="https://raw.githubusercontent.com/MercurioDubs/mice/main/Mice%20On%20Venus%20(Alpha%200.14.0)(MP3_160K).mp3
-" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/MercurioDubs/mice/main/Mice%20On%20Venus%20(Alpha%200.14.0)(MP3_160K).mp3" type="audio/mpeg">
         Seu navegador não suporta áudio.
       </audio>
       <button onclick="toggleMusic()" class="btn-purple" style="padding:0.25rem 0.5rem; margin-top:0.5rem; font-size:0.9rem;">
-        Tocar Música
+        Pausar Música
       </button>
     </div>
   </div>
@@ -93,32 +107,43 @@
   <div class="cloud" style="width:200px; height:100px; top:50%; animation-duration:90s;"></div>
   <div class="cloud" style="width:150px; height:75px; top:70%; animation-duration:75s;"></div>
 
-  <script>
-    const reasonText = `Sabe porque escolhi esse nome? Não tenho um significado próprio pra ele, mas pensei nele quando nós tava fazendo a lore do SMP do Tesla, e em alguma parte aleatória daquela lore que não vou dizer qual... eu talvez tenha escrevido algo que veio mais de mim pra ti, doq apenas lore. Enfim, nosso texto vai ficar um pouco parecido, porq percebi que ce escreve q nem eu nessas horas, mas yaya, eu também queria te agradecer por tudo ao qual ce já fez por mim, e mesmo que pra ti algumas delas foi ou ainda pareça algo pequeno, pra mim esses pequenos detalhes mudam tudo todos os dias, e sim, eu sou bom com textos, e se eu pudesse te faria vários ao ponto q ce me daria uma fodendo panelada por isto. E ainda assim eu tbm gosto de mostrar que me importo através de ações, tempo de qualidade e presentes, e eu queria que vc soubesse que ce não é só especial pra mim, mas também você é como um girassol pra muá, pois girassóis geralmente simbolizam a luz, e isso é tudo que puedo hablar. Enfim, escolhi este nome, pois eu queria que fosse algo especial e inocente, uma forma única de poder falar teu nome que ninguém mais tenha, assim como o de Izuna pro Zaraki, algo que uma criança pensaria pra amiga, e algo que o Rafael de 8 anos pensaria pela primeira vez pra alguém que fosse a única melhor amiga dele. Até hoje eu nunca havia dado um apelido pra ninguém que não fosse algo racista ou bem bosta proposital como Zé Gotinha da Petrobras, Posto Ipiranga, Cu de nós todos, Celular com bateria viciada (precisa plugar nele toda hora), mas mesmo que isso pareça da boca pra fora apenas pra eu de alguma maneira tentar te fazer sentir especial e sorrir, quero que saiba que é real e que hoje você ocupa mais uma vez o pódio de primeira vez em algo referente a nós (e pelo visto eu tbm sem querer fiz uma frase estranha neste djabo), e assim como um girassol transmite felicidade em algumas lendas, na nossa lenda vc me faz feliz sempre, tira risadas minhas até mesmo quando esto mal sem nem saber, oce é gentil pacarai com eu também, mesmo que diariamente me espanque e tente me matar, ce cuida de mim me obrigando a dormir cedo com uma arma apontada em minha cabeça. Quando to sem vontade de falar com as pessoas, ce pergunta se quero fazer outra coisa, e o fato de ce ta sempre cmg tbm faz parte do verbo cuidar, mesmo que não haja algo no sentido literal, só de vc estar presente e o tempo de qualidade já faz parte disso pra eu. Não sei se tudo isso seria um significado importantíssimo pra ti, mas pra mim, o significado de tudo isso que falei e o significado do apelido que te dei é você. Fodase se parecer estranho, mas assim como o significado de um apelido é único, assim como ações raras são únicas, assim como o tempo de qualidade é bem raro e único, vc é única pra cacete, assim como cada coisinha que mencionei, principalmente pra mim. E quer saber? É isso que torna tudo especial, é isso que torna esse apelido especial pra mim, e é isso que te torna tão especial pra mim, e eu quero que ce vá se foder, idiota.`;
+<script>
+  const reasonText = `Sabe porque escolhi esse nome? Não tenho um significado próprio pra ele, mas pensei nele quando nós tava fazendo a lore do SMP do Tesla, e em alguma parte aleatória daquela lore que não vou dizer qual... eu talvez tenha escrevido algo que veio mais de mim pra ti, doq apenas lore. Enfim, nosso texto vai ficar um pouco parecido, porq percebi que ce escreve q nem eu nessas horas, mas yaya, eu também queria te agradecer por tudo ao qual ce já fez por mim, e mesmo que pra ti algumas delas foi ou ainda pareça algo pequeno, pra mim esses pequenos detalhes mudam tudo todos os dias, e sim, eu sou bom com textos, e se eu pudesse te faria vários ao ponto q ce me daria uma fodendo panelada por isto. E ainda assim eu tbm gosto de mostrar que me importo através de ações, tempo de qualidade e presentes, e eu queria que vc soubesse que ce não é só especial pra mim, mas também você é como um girassol pra muá, pois girassóis geralmente simbolizam a luz, e isso é tudo que puedo hablar. Enfim, escolhi este nome, pois eu queria que fosse algo especial e inocente, uma forma única de poder falar teu nome que ninguém mais tenha, assim como o de Izuna pro Zaraki, algo que uma criança pensaria pra amiga, e algo que o Rafael de 8 anos pensaria pela primeira vez pra alguém que fosse a única melhor amiga dele. Até hoje eu nunca havia dado um apelido pra ninguém que não fosse algo racista ou bem bosta proposital, mas mesmo que isso pareça da boca pra fora apenas pra eu de alguma maneira tentar te fazer sentir especial e sorrir, quero que saiba que é real, e assim como um girassol transmite felicidade em algumas lendas, na nossa lenda vc me faz feliz sempre, tira risadas minhas até mesmo quando esto mal sem nem saber, oce é gentil pacarai comigo também. Não sei se tudo isso seria um significado importantíssimo pra ti, mas pra mim, o significado de tudo isso que falei e o significado do apelido que te dei é você.`;
 
-    function revealNickname() {
-      document.getElementById('nicknameReveal').style.display = 'block';
-      window.scrollTo({ top: document.getElementById('nicknameReveal').offsetTop, behavior: 'smooth' });
-      typeText(reasonText, document.getElementById('reasonText'), 25); // 25ms por letra
-    }
+  function revealNickname() {
+    // Troca imagem
+    const img = document.getElementById('surpriseImage');
+    img.src = 'https://cdn.discordapp.com/attachments/1303833685057081385/1420491726979727543/E542522D-4D7C-4FA6-B3BD-D8741F0C79E3.jpg?ex=68d59783&is=68d44603&hm=74c028111c7aa6809e9f6f638fb6e4533d5d1cc884910ae7d20c19e782ccfb0d&'; // nova imagem após clique
+    img.style.transform = 'scale(1.05)';
 
-    function typeText(text, element, speed) {
-      element.textContent = '';
-      let i = 0;
-      const interval = setInterval(() => {
-        element.textContent += text[i];
-        i++;
-        element.scrollTop = element.scrollHeight;
-        if (i >= text.length) clearInterval(interval);
-      }, speed);
-    }
+    // Mostra texto
+    document.getElementById('nicknameReveal').style.display = 'block';
+    window.scrollTo({ top: document.getElementById('nicknameReveal').offsetTop, behavior: 'smooth' });
 
-    function toggleMusic() {
-      const music = document.getElementById('bgMusic');
-      if (music.paused) music.play();
-      else music.pause();
-    }
-  </script>
+    // Começa música automaticamente
+    const music = document.getElementById('bgMusic');
+    music.play();
+
+    // Inicia animação do texto
+    typeText(reasonText, document.getElementById('reasonText'), 25);
+  }
+
+  function typeText(text, element, speed) {
+    element.textContent = '';
+    let i = 0;
+    const interval = setInterval(() => {
+      element.textContent += text[i];
+      i++;
+      element.scrollTop = element.scrollHeight;
+      if (i >= text.length) clearInterval(interval);
+    }, speed);
+  }
+
+  function toggleMusic() {
+    const music = document.getElementById('bgMusic');
+    if (!music.paused) music.pause(); // pausa se estiver tocando
+  }
+</script>
 
 </body>
 </html>
