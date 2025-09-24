@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Revelar Apelido</title>
   <style>
-    /* ===== Fundo com nuvens animadas ===== */
     body {
       margin: 0;
       padding: 0;
       height: 100vh;
       overflow-x: hidden;
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(to top, #4c1d95, #7c3aed); /* céu roxo */
+      background: linear-gradient(to top, #4c1d95, #7c3aed);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -31,7 +30,6 @@
       0% { transform: translateX(-200px); }
       100% { transform: translateX(100vw); }
     }
-    /* ===== Botão ===== */
     button {
       cursor: pointer;
       font-weight: 600;
@@ -47,7 +45,6 @@
     .btn-purple:hover {
       background-color: #a78bfa;
     }
-    /* ===== Bloco de apelido ===== */
     #nicknameReveal {
       display: none;
       margin-top: 2rem;
@@ -66,23 +63,19 @@
       margin-top: 0.5rem;
       white-space: pre-wrap;
       line-height: 1.6;
+      min-height: 200px;
     }
   </style>
 </head>
 <body>
 
-  <!-- ===== Botão para revelar apelido ===== -->
   <button onclick="revealNickname()" class="btn-purple">
     Revelar Apelido!
   </button>
 
-  <!-- ===== Bloco do apelido e texto ===== -->
   <div id="nicknameReveal">
-    <h2>Seu apelido é: <span id="nickname">Zorka</span>!</h2>
-    <p id="reasonText">
-Aqui vai o texto que você quer revelar para ela. Você pode colocar qualquer mensagem longa, com quebras de linha e emojis também. 💜✨
-    </p>
-    <!-- ===== Bloco de música ===== -->
+    <h2>Seu apelido é: <span id="nickname">Yaya</span>!</h2>
+    <p id="reasonText"></p>
     <div style="margin-top:1rem;">
       <audio id="bgMusic" loop preload="auto">
         <source src="AQUI_COLE_O_LINK_DA_MUSICA_QUE_ELA_GOSTA.mp3" type="audio/mpeg">
@@ -94,26 +87,35 @@ Aqui vai o texto que você quer revelar para ela. Você pode colocar qualquer me
     </div>
   </div>
 
-  <!-- ===== Nuvens ===== -->
+  <!-- Nuvens -->
   <div class="cloud" style="width:120px; height:60px; top:20%; animation-duration:60s;"></div>
   <div class="cloud" style="width:200px; height:100px; top:50%; animation-duration:90s;"></div>
   <div class="cloud" style="width:150px; height:75px; top:70%; animation-duration:75s;"></div>
 
   <script>
-    // ===== Função para revelar apelido =====
+    const reasonText = `Sabe porque escolhi esse nome? Não tenho um significado próprio pra ele, mas pensei nele quando nós tava fazendo a lore do SMP do Tesla, e em alguma parte aleatória daquela lore que não vou dizer qual... eu talvez tenha escrevido algo que veio mais de mim pra ti, doq apenas lore. Enfim, nosso texto vai ficar um pouco parecido, porq percebi que ce escreve q nem eu nessas horas, mas yaya, eu também queria te agradecer por tudo ao qual ce já fez por mim, e mesmo que pra ti algumas delas foi ou ainda pareça algo pequeno, pra mim esses pequenos detalhes mudam tudo todos os dias, e sim, eu sou bom com textos, e se eu pudesse te faria vários ao ponto q ce me daria uma fodendo panelada por isto. E ainda assim eu tbm gosto de mostrar que me importo através de ações, tempo de qualidade e presentes, e eu queria que vc soubesse que ce não é só especial pra mim, mas também você é como um girassol pra muá, pois girassóis geralmente simbolizam a luz, e isso é tudo que puedo hablar. Enfim, escolhi este nome, pois eu queria que fosse algo especial e inocente, uma forma única de poder falar teu nome que ninguém mais tenha, assim como o de Izuna pro Zaraki, algo que uma criança pensaria pra amiga, e algo que o Rafael de 8 anos pensaria pela primeira vez pra alguém que fosse a única melhor amiga dele. Até hoje eu nunca havia dado um apelido pra ninguém que não fosse algo racista ou bem bosta proposital como Zé Gotinha da Petrobras, Posto Ipiranga, Cu de nós todos, Celular com bateria viciada (precisa plugar nele toda hora), mas mesmo que isso pareça da boca pra fora apenas pra eu de alguma maneira tentar te fazer sentir especial e sorrir, quero que saiba que é real e que hoje você ocupa mais uma vez o pódio de primeira vez em algo referente a nós (e pelo visto eu tbm sem querer fiz uma frase estranha neste djabo), e assim como um girassol transmite felicidade em algumas lendas, na nossa lenda vc me faz feliz sempre, tira risadas minhas até mesmo quando esto mal sem nem saber, oce é gentil pacarai com eu também, mesmo que diariamente me espanque e tente me matar, ce cuida de mim me obrigando a dormir cedo com uma arma apontada em minha cabeça. Quando to sem vontade de falar com as pessoas, ce pergunta se quero fazer outra coisa, e o fato de ce ta sempre cmg tbm faz parte do verbo cuidar, mesmo que não haja algo no sentido literal, só de vc estar presente e o tempo de qualidade já faz parte disso pra eu. Não sei se tudo isso seria um significado importantíssimo pra ti, mas pra mim, o significado de tudo isso que falei e o significado do apelido que te dei é você. Fodase se parecer estranho, mas assim como o significado de um apelido é único, assim como ações raras são únicas, assim como o tempo de qualidade é bem raro e único, vc é única pra cacete, assim como cada coisinha que mencionei, principalmente pra mim. E quer saber? É isso que torna tudo especial, é isso que torna esse apelido especial pra mim, e é isso que te torna tão especial pra mim, e eu quero que ce vá se foder, idiota.`;
+
     function revealNickname() {
       document.getElementById('nicknameReveal').style.display = 'block';
       window.scrollTo({ top: document.getElementById('nicknameReveal').offsetTop, behavior: 'smooth' });
+      typeText(reasonText, document.getElementById('reasonText'), 25); // 25ms por letra
     }
 
-    // ===== Função para tocar/pausar música =====
+    function typeText(text, element, speed) {
+      element.textContent = '';
+      let i = 0;
+      const interval = setInterval(() => {
+        element.textContent += text[i];
+        i++;
+        element.scrollTop = element.scrollHeight;
+        if (i >= text.length) clearInterval(interval);
+      }, speed);
+    }
+
     function toggleMusic() {
       const music = document.getElementById('bgMusic');
-      if (music.paused) {
-        music.play();
-      } else {
-        music.pause();
-      }
+      if (music.paused) music.play();
+      else music.pause();
     }
   </script>
 
